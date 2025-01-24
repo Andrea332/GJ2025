@@ -6,7 +6,7 @@
             "id": "e50fbb4e-08a0-4635-ae3a-403fc4f4d943",
             "actions": [
                 {
-                    "name": "InteractWithObject",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "fe53bd89-c5b1-4230-86f7-ad0910c1be39",
                     "expectedControlType": "",
@@ -41,7 +41,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "InteractWithObject",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -52,7 +52,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";GamePad",
-                    "action": "InteractWithObject",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
