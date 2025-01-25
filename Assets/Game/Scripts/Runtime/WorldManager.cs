@@ -1,9 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WorldManager : MonoBehaviour
 {
     public WorldPartition[] worldPartitions;
     public WorldPartition startPartition;
+
+    static readonly HashSet<string> visitedPartitions = new();
+
+    public static bool HasVisitedPartition(string id)
+    {
+        return visitedPartitions.Contains(id);
+    }
 
     private void Start()
     {
@@ -14,7 +22,9 @@ public class WorldManager : MonoBehaviour
     {
         for (int i = 0; i < worldPartitions.Length; i++)
         {
-            worldPartitions[i].gameObject.SetActive(worldPartitions[i].Id == id);
+            bool active = worldPartitions[i].Id == id;
+            worldPartitions[i].gameObject.SetActive(active);
+            if (active && !visitedPartitions.Contains(id)) visitedPartitions.Add(id);
         }
     }
 }

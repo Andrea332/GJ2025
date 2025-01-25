@@ -10,21 +10,18 @@ public class InventorySlotUI : MonoBehaviour
     [SerializeField] ItemData item;
     [Space]
     [SerializeField] Inventory inventory;
-    [SerializeField] Image iconImage;
     [SerializeField] TextMeshProUGUI countText;
 
-    public static Dictionary<ItemData, InventorySlotUI> registeredSlots = new();
+    public static Dictionary<string, InventorySlotUI> registeredSlots = new();
 
     void Awake()
     {
-        registeredSlots.TryAdd(item, this);
+        registeredSlots.TryAdd(item.Id, this);
     }
 
     void OnEnable()
     {
         if (!item) return;
-        if (iconImage) iconImage.sprite = item.InventorySprite;
-
         if (!inventory) return;
         inventory.ItemAmountChanged += OnAmountChanged;
         if (countText) countText.text = inventory.GetItemAmount(item).ToString();
@@ -39,10 +36,5 @@ public class InventorySlotUI : MonoBehaviour
     public void OnAmountChanged(ItemData item, int quantity)
     {
         if (countText) countText.text = quantity.ToString();
-    }
-
-    void OnValidate()
-    {
-        if (iconImage && item) iconImage.sprite = item.InventorySprite;
     }
 }

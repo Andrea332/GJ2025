@@ -16,7 +16,7 @@ public class UnlockAnimation : CoroutineAnimation
     {
         var cam = Camera.main;
         var item = target.TryGetComponent(out Lock lockObj) ? lockObj.RequiredItem : null;
-        InventorySlotUI.registeredSlots.TryGetValue(item, out InventorySlotUI uiSlot);
+        InventorySlotUI.registeredSlots.TryGetValue(item.Id, out InventorySlotUI uiSlot);
         if (!canvas) canvas = FindFirstObjectByType<Canvas>();
 
         if (!cam || !item || !uiSlot || duration <= 0f || !canvas)
@@ -29,7 +29,7 @@ public class UnlockAnimation : CoroutineAnimation
         var endPosition = cam.WorldToScreenPoint(target.transform.position);
 
         var icon = iconPool.Get();
-        icon.GetComponent<Image>().sprite = item.InventorySprite;
+        icon.GetComponent<Image>().sprite = item.InGameSprite;
         var transform = icon.transform;
         transform.SetParent(canvas.transform);
 

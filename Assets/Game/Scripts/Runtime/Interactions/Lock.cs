@@ -8,6 +8,7 @@ public class Lock : Interactable
     [SerializeField] ItemData requiredItem;
     [SerializeField] bool removeItems;
     [SerializeField] bool automatic;
+    [SerializeField] string[] partitionsToVisit;
     [Space]
     [SerializeField] Inventory inventory;
     [SerializeField] CoroutineAnimation unlockAnimation;
@@ -27,6 +28,10 @@ public class Lock : Interactable
     protected override void OnInteract(Vector2 worldInteractPosition)
     {
         if (Unlocked) return;
+        for (int i = 0; i < partitionsToVisit.Length; i++)
+        {
+            if (!WorldManager.HasVisitedPartition(partitionsToVisit[i])) return;
+        }
         if (inventory && inventory.HasItem(requiredItem))
         {
             Unlocked = true;

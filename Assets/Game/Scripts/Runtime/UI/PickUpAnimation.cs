@@ -16,7 +16,7 @@ public class PickUpAnimation : CoroutineAnimation
     {
         var cam = Camera.main;
         var item = target.GetComponent<Item>();
-        InventorySlotUI.registeredSlots.TryGetValue(item.ItemData, out InventorySlotUI uiSlot);
+        InventorySlotUI.registeredSlots.TryGetValue(item.ItemData.Id, out InventorySlotUI uiSlot);
         if (!canvas) canvas = FindFirstObjectByType<Canvas>();
 
         if (!cam || !item || !uiSlot || duration <= 0f || !canvas)
@@ -28,7 +28,7 @@ public class PickUpAnimation : CoroutineAnimation
         var startPosition = cam.WorldToScreenPoint(target.transform.position);
 
         var icon = iconPool.Get();
-        icon.GetComponent<Image>().sprite = item.ItemData.InventorySprite;
+        icon.GetComponent<Image>().sprite = item.ItemData.InGameSprite;
         var transform = icon.transform;
         transform.SetParent(canvas.transform);
 
