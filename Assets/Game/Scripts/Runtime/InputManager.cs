@@ -46,7 +46,7 @@ public class InputManager : MonoBehaviour
 
         if (_colliderHitted != null)
         {
-            if (_colliderHitted.TryGetComponent<IInteractAble>(out var interactableComponent))
+            if (_colliderHitted.TryGetComponent<Interactable>(out var interactableComponent))
             {
                 interactableComponent.Interact(worldPoint);
             }

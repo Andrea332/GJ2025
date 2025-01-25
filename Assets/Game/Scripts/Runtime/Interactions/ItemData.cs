@@ -7,7 +7,6 @@ public class ItemData : ScriptableObject
     [SerializeField] Sprite inGameSprite;
     [SerializeField] Sprite inventorySprite;
 
+    public Sprite InGameSprite => inGameSprite;
     public Sprite InventorySprite => inventorySprite;
-
-    public Action<int> OnAmountChanged { get; set; }
 }

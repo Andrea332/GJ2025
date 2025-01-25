@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  inventory: {fileID: 11400000, guid: dc7559a93024ee94ea99a7892543a6f1, type: 2}
   iconImage: {fileID: 6323158709591478996}
   countText: {fileID: 3594511893483970259}
 --- !u!1 &5442632478465709174
