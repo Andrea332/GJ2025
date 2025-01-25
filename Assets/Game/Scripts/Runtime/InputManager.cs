@@ -9,8 +9,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] InputActionReference pointAction;
 
     Camera _mainCamera;
-    Ray _ray;
-    Vector2 _screenPoint;
+    Vector2 worldPoint;
     Collider2D _colliderHitted;
 
     void Awake()
@@ -32,24 +31,33 @@ public class InputManager : MonoBehaviour
 
     void OnPointerMoved(InputAction.CallbackContext context)
     {
-        _screenPoint = context.ReadValue<Vector2>();
+        if (!_mainCamera) return;
+
+        var screenPoint = context.ReadValue<Vector2>();
+        worldPoint = _mainCamera.ScreenToWorldPoint(screenPoint);
+        var newColl = IsOverUIObject(screenPoint) ? null : Physics2D.OverlapPoint(worldPoint);
+
+        if (newColl != _colliderHitted)
+        {
+            if (_colliderHitted && _colliderHitted.TryGetComponent<Interactable>(out var oldInteractable))
+            {
+                oldInteractable.Hover(false, worldPoint);
+            }
+
+            if (newColl && newColl.TryGetComponent<Interactable>(out var newInteractable))
+            {
+                newInteractable.Hover(true, worldPoint);
+            }
+
+            _colliderHitted = newColl;
+        }
     }
 
     void OnActionperformed(InputAction.CallbackContext context)
     {
-        if (!_mainCamera) return;
-        if (IsOverUIObject(_screenPoint)) return;
-
-        var worldPoint = _mainCamera.ScreenToWorldPoint(_screenPoint);
-
-        _colliderHitted = Physics2D.OverlapPoint(worldPoint);
-
-        if (_colliderHitted != null)
+        if (_colliderHitted && _colliderHitted.TryGetComponent<Interactable>(out var interactableComponent))
         {
-            if (_colliderHitted.TryGetComponent<Interactable>(out var interactableComponent))
-            {
-                interactableComponent.Interact(worldPoint);
-            }
+            interactableComponent.Interact(worldPoint);
         }
     }
 

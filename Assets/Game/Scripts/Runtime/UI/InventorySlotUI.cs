@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,13 @@ public class InventorySlotUI : MonoBehaviour
     [SerializeField] Inventory inventory;
     [SerializeField] Image iconImage;
     [SerializeField] TextMeshProUGUI countText;
+
+    public static Dictionary<ItemData, InventorySlotUI> registeredSlots = new();
+
+    void Awake()
+    {
+        registeredSlots.TryAdd(item, this);
+    }
 
     void OnEnable()
     {

@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9642ba590d2f50143a993b5887dcec5e, type: 3}
-  m_Name: Item1
+  m_Script: {fileID: 11500000, guid: 7ee44080dd53287479dd7ccdfc6174b7, type: 3}
+  m_Name: UiMovingIcon
   m_EditorClassIdentifier: 
-  inGameSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  inventorySprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  prefab: {fileID: 9206701851322870831, guid: 6c268204a94b8d643b8f77feaa4e1c3f, type: 3}
+  capacity: 10
+  backlog: 0
+  useCustomScene: 1
+  sceneName: 

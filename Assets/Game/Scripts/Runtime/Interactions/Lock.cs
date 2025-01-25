@@ -13,6 +13,7 @@ public class Lock : Interactable
     [SerializeField] CoroutineAnimation unlockAnimation;
     [SerializeField] UnityEvent onUnlock;
 
+    public ItemData RequiredItem => requiredItem;
     public bool Unlocked { get; private set; }
 
     void OnEnable()
