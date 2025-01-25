@@ -78,15 +78,15 @@ SpriteRenderer:
   m_SortingLayerID: -1006967621
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -3760102511214649650, guid: b5814668575185a4a914f2de5cf86380, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.203203, y: 7.98}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8658901904580838704
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1621923fb4c0142ba2b84a1e796c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorOverride: {fileID: 2800000, guid: 3202321d3c0eb744b9a48f91bdc94f5a, type: 3}
+  cursorOverride: {fileID: 2800000, guid: f75329ec53916af44aa956efc1c142de, type: 3}
   defaultCursor: {fileID: 2800000, guid: d005ca30d7feb68488865a619e21b9f8, type: 3}
   onInteract:
     m_PersistentCalls:
@@ -144,10 +144,10 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.203203, y: 7.98}
+    newSize: {x: 6.203203, y: 7.98}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0

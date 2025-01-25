@@ -16,8 +16,9 @@ public class Prsd_AudioManager : MonoBehaviour
 
     public static void PlaySoundFx(Prsd_AudioSet set) { if (instance) instance.PlaySound(set); }
     public static void TrackFadeInRequest(Prsd_AudioSet set) { if (instance) instance.FadeIn(set); }
-    public static void TrackFadeOutRequest(Prsd_AudioSet set) { if (instance) instance.FadeOut(); }
-    public static void TrackCrossFadeRequest(Prsd_AudioSet set, bool syncTime) { if (instance) instance.CrossFade(set, syncTime); }
+    public static void TrackFadeOutRequest() { if (instance) instance.FadeOut(); }
+    public static void TrackCrossFadeRequest(Prsd_AudioSet set) { if (instance) instance.CrossFade(set, false); }
+    public static void TrackCrossFadeTimeSyncedRequest(Prsd_AudioSet set) { if (instance) instance.CrossFade(set, true); }
 
     readonly List<Prsd_AudioSet> playedThisFrame = new();
 

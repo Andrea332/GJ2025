@@ -2,7 +2,6 @@ using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InventorySlotUI : MonoBehaviour
 {
@@ -35,6 +34,7 @@ public class InventorySlotUI : MonoBehaviour
 
     public void OnAmountChanged(ItemData item, int quantity)
     {
+        if (item.Id != this.item.Id) return;
         if (countText) countText.text = quantity.ToString();
     }
 }

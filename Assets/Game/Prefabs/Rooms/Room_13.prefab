@@ -291,6 +291,10 @@ PrefabInstance:
       value: Lock_11
       objectReference: {fileID: 0}
     - target: {fileID: 1488447465524219080, guid: 9ac0a71c17a9e884e9a5cc942e80da1f, type: 3}
+      propertyPath: requiredItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 16437b20cf008cb4299cd8c3a29eaf26, type: 2}
+    - target: {fileID: 1488447465524219080, guid: 9ac0a71c17a9e884e9a5cc942e80da1f, type: 3}
       propertyPath: onUnlock.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -612,6 +616,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lock_4
       objectReference: {fileID: 0}
+    - target: {fileID: 1488447465524219080, guid: 9ac0a71c17a9e884e9a5cc942e80da1f, type: 3}
+      propertyPath: requiredItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 16437b20cf008cb4299cd8c3a29eaf26, type: 2}
     - target: {fileID: 1488447465524219080, guid: 9ac0a71c17a9e884e9a5cc942e80da1f, type: 3}
       propertyPath: onUnlock.m_PersistentCalls.m_Calls.Array.size
       value: 1

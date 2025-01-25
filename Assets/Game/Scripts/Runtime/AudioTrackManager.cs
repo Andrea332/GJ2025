@@ -20,6 +20,6 @@ public class AudioTrackManager : MonoBehaviour
     {
         if (item.Id != this.item.Id) return;
         amount = Mathf.Clamp(amount - 1, 0, incrementalTracks.Length - 1);
-        Prsd_AudioManager.TrackCrossFadeRequest(incrementalTracks[amount], true);
+        Prsd_AudioManager.TrackCrossFadeTimeSyncedRequest(incrementalTracks[amount]);
     }
 }
