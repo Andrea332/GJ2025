@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1006967621
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f82927871c9adbd429222e526e09f740, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &4282750506153206550
@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3f961c4fbc93f458ba91977ee86c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorOverride: {fileID: 2800000, guid: 3202321d3c0eb744b9a48f91bdc94f5a, type: 3}
+  defaultCursor: {fileID: 2800000, guid: d005ca30d7feb68488865a619e21b9f8, type: 3}
   onInteract:
     m_PersistentCalls:
       m_Calls: []

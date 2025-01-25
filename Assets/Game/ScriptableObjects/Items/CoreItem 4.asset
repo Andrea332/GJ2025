@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CoreItem 4
   m_EditorClassIdentifier: 
   id: core
-  inGameSprite: {fileID: 21300000, guid: 55643612c3d98ae479f75ce8d93fcec1, type: 3}
+  inGameSprite: {fileID: 21300000, guid: c060b463b16f4d74e9f224756ec18089, type: 3}
