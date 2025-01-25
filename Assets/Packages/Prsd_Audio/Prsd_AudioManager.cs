@@ -17,7 +17,7 @@ public class Prsd_AudioManager : MonoBehaviour
     public static void PlaySoundFx(Prsd_AudioSet set) { if (instance) instance.PlaySound(set); }
     public static void TrackFadeInRequest(Prsd_AudioSet set) { if (instance) instance.FadeIn(set); }
     public static void TrackFadeOutRequest(Prsd_AudioSet set) { if (instance) instance.FadeOut(); }
-    public static void TrackCrossFadeRequest(Prsd_AudioSet set) { if (instance) instance.CrossFade(set); }
+    public static void TrackCrossFadeRequest(Prsd_AudioSet set, bool syncTime) { if (instance) instance.CrossFade(set, syncTime); }
 
     readonly List<Prsd_AudioSet> playedThisFrame = new();
 
@@ -108,12 +108,12 @@ public class Prsd_AudioManager : MonoBehaviour
         StartCoroutine(Fade(trackSource, targetVolume, defaultFadeDuration));
     }
 
-    public void CrossFade(Prsd_AudioSet newTrack)
+    public void CrossFade(Prsd_AudioSet newTrack, bool syncTime)
     {
         if (newTrack.type != Prsd_AudioSet.Type.Track) return;
         StopAllCoroutines();
         transitionSource.Stop();
-        StartCoroutine(CrossFade(newTrack, defaultFadeDuration));
+        StartCoroutine(CrossFade(newTrack, defaultFadeDuration, syncTime));
     }
 
     IEnumerator Fade(AudioSource source, float targetVolume, float duration)
@@ -130,12 +130,13 @@ public class Prsd_AudioManager : MonoBehaviour
         }
     }
 
-    IEnumerator CrossFade(Prsd_AudioSet newTrack, float duration)
+    IEnumerator CrossFade(Prsd_AudioSet newTrack, float duration, bool syncTime)
     {
         transitionSource.enabled = true;
         (trackSource, transitionSource) = (transitionSource, trackSource);
         StartCoroutine(Fade(transitionSource, 0f, duration));
         PlaySound(newTrack);
+        if (syncTime) trackSource.time = transitionSource.time;
         trackSource.volume = 0f;
         yield return Fade(trackSource, newTrack.volume, duration);
         transitionSource.Stop();

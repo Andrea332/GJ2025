@@ -17,7 +17,8 @@ public class Interactable : MonoBehaviour
     {
         if (cursorOverride)
         {
-            Cursor.SetCursor(value ? cursorOverride : defaultCursor, Vector2.zero, CursorMode.Auto);
+            var cursor = value ? cursorOverride : defaultCursor;
+            Cursor.SetCursor(cursor, new Vector2(cursor.width * 0.5f, cursor.height * 0.5f), CursorMode.Auto);
         }
         OnHover(value, worldInteractPosition);
     }

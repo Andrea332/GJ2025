@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PickUpAnimation
   m_EditorClassIdentifier: 
   iconPool: {fileID: 11400000, guid: b6f0d5826e50eec4ba47d90df2dda23a, type: 2}
-  duration: 1
+  duration: 0.9
   curve:
     serializedVersion: 2
     m_Curve:
@@ -27,8 +27,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.21754889
     - serializedVersion: 3
-      time: 0.26011923
-      value: -0.13532564
+      time: 0.3649471
+      value: -0.14161226
       inSlope: 0
       outSlope: 0
       tangentMode: 0

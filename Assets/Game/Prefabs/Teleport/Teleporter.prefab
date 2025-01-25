@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fadad25ba69a7e34d8d29e7b107bdd64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorOverride: {fileID: 2800000, guid: 8d286231457956242badb55724b11c5d, type: 3}
+  defaultCursor: {fileID: 2800000, guid: d005ca30d7feb68488865a619e21b9f8, type: 3}
   onInteract:
     m_PersistentCalls:
       m_Calls: []
