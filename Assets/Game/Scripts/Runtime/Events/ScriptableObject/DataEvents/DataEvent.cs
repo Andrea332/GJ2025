@@ -7,7 +7,7 @@ namespace Game
     {
         public UnityEvent<T> OnDataChanged;
 
-        public void RaiseOnDataChanged(T data)
+        public void Raise(T data)
         {
             OnDataChanged?.Invoke(data);
         }

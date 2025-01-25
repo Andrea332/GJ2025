@@ -2,5 +2,7 @@ using UnityEngine;
 
 public class WorldPartition : MonoBehaviour
 {
-    public string id;
+    [SerializeField] string id;
+
+    public string Id => id;
 }

@@ -1,30 +1,20 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WorldManager : MonoBehaviour
 {
-    public List<GameObject> worldPartitions;
-    public GameObject currentWorldPartition;
+    public WorldPartition[] worldPartitions;
+    public WorldPartition startPartition;
 
     private void Start()
     {
-        foreach (var worldPartition in worldPartitions)
-        {
-            if (currentWorldPartition == worldPartition)
-            {
-                currentWorldPartition.SetActive(true);
-                continue;
-            }
-
-            worldPartition.SetActive(false);
-        }
+        LoadPartition(startPartition.Id);
     }
 
-    public void LoadAndOverrideWorldPartition(string worldName)
+    public void LoadPartition(string id)
     {
-        currentWorldPartition.SetActive(false);
-        if (currentWorldPartition.name == worldName) return;
-        currentWorldPartition = worldPartitions.Find(worldPartition => worldPartition.name == worldName);
-        currentWorldPartition.SetActive(true);
+        for (int i = 0; i < worldPartitions.Length; i++)
+        {
+            worldPartitions[i].gameObject.SetActive(worldPartitions[i].Id == id);
+        }
     }
 }
