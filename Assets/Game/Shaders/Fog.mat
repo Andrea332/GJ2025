@@ -47,11 +47,11 @@ Material:
     m_Floats:
     - _Alpha: 2
     - _AlphaPower: 0.71
-    - _Intensity: 0.5
+    - _Intensity: 0.6
     - _MaskPower: 1.5
     m_Colors:
-    - _Color: {r: 0.8026027, g: 0.72641516, b: 1, a: 1}
-    - _Scale: {r: 0.07, g: 0.28, b: 0, a: 0}
+    - _Color: {r: 0.8515751, g: 0.67515135, b: 1, a: 1}
+    - _Scale: {r: 0.34, g: 0.82, b: 0, a: 0}
     - _Speed: {r: 0.05, g: 0.05, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

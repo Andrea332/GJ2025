@@ -5,9 +5,6 @@ TextureImporter:
   - first:
       213: 8316487201957873632
     second: Acchiappasogni 1_0
-  - first:
-      213: -5048550852056113143
-    second: Acchiappasogni 1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -108,7 +105,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 456
+        width: 455
         height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -120,28 +117,6 @@ TextureImporter:
       bones: []
       spriteID: 0e708cb2c091a6370800000000000000
       internalID: 8316487201957873632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Acchiappasogni 1_1
-      rect:
-        serializedVersion: 2
-        x: 1002
-        y: 175
-        width: 217
-        height: 310
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 90023b89fb1ffe9b0800000000000000
-      internalID: -5048550852056113143
       vertices: []
       indices: 
       edges: []
@@ -161,7 +136,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Acchiappasogni 1_0: 8316487201957873632
-      Acchiappasogni 1_1: -5048550852056113143
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
