@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField] InputActionReference interactAction;
     [SerializeField] InputActionReference pointAction;
+    [SerializeField] InputActionReference quitAction;
 
     Camera _mainCamera;
     Collider2D _colliderHitted;
@@ -23,12 +24,14 @@ public class InputManager : MonoBehaviour
     {
         interactAction.action.performed += OnActionperformed;
         pointAction.action.performed += OnPointerMoved;
+        quitAction.action.performed += OnQuitPerformed;
     }
 
     void OnDisable()
     {
         interactAction.action.performed -= OnActionperformed;
         pointAction.action.performed -= OnPointerMoved;
+        quitAction.action.performed -= OnQuitPerformed;
     }
 
     void OnPointerMoved(InputAction.CallbackContext context)
@@ -73,5 +76,10 @@ public class InputManager : MonoBehaviour
         List<RaycastResult> results = new();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
         return results.Count > 0;
+    }
+
+    private void OnQuitPerformed(InputAction.CallbackContext obj)
+    {
+        Application.Quit();
     }
 }

@@ -1985,6 +1985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction: {fileID: 1786230550421305433, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   pointAction: {fileID: 6295176081621728830, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  quitAction: {fileID: 2981476743377232661, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!4 &501264721
 Transform:
   m_ObjectHideFlags: 0
@@ -12844,6 +12845,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 86915963}
     m_Modifications:
+    - target: {fileID: 389138999236256529, guid: 1ffb7011cdf5f4d45b37a334fbb0b5fe, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2706138543151533480, guid: 1ffb7011cdf5f4d45b37a334fbb0b5fe, type: 3}
       propertyPath: m_Name
       value: Room_01
