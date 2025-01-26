@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 74b6ea63600bf8f498167c272355f65e
+guid: b81ab13a0bdbea44087cc836b6e6bf2d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5373191472547808866
-    second: AREA 4_0
+      213: -5101613053787553537
+    second: AREA 4 APERTA_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AREA 4_0
+      name: AREA 4 APERTA_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 266ce570d29619a40800000000000000
-      internalID: 5373191472547808866
+      spriteID: ff04f7305fd6339b0800000000000000
+      internalID: -5101613053787553537
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AREA 4_0: 5373191472547808866
+      AREA 4 APERTA_0: -5101613053787553537
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

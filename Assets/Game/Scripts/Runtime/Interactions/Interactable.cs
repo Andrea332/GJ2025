@@ -9,6 +9,7 @@ public class Interactable : MonoBehaviour
 
     public void Interact(Vector2 worldInteractPosition)
     {
+        if (!MonsterManager.MonsterCheck(this)) return;
         OnInteract(worldInteractPosition);
         onInteract.Invoke();
     }

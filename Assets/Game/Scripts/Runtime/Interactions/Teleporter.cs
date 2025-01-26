@@ -7,6 +7,8 @@ public class Teleporter : Interactable
     [SerializeField] string targetPartitionId;
     [SerializeField] Game.DataEventString loadPartitionEvent;
 
+    public string TargetPartitionId => targetPartitionId;
+
     protected override void OnInteract(Vector2 worldInteractPosition)
     {
         loadPartitionEvent.Raise(targetPartitionId);

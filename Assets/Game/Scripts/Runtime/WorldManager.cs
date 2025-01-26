@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,16 @@ public class WorldManager : MonoBehaviour
     public WorldPartition startPartition;
     public Prsd_UtilityAnimations transitionPanel;
 
+    static WorldPartition currentPartition;
+
+    public static bool CanHaveMonster => currentPartition && currentPartition.CanHaveMonster;
+
     static readonly HashSet<string> visitedPartitions = new();
+
+    public static event Action PartitionChanged;
+
+    public static string LastPartitionVisitedId { get; private set; }
+    public static string CurrentPartitionVisitedId { get; private set; }
 
     public static bool HasVisitedPartition(string id)
     {
@@ -33,13 +43,23 @@ public class WorldManager : MonoBehaviour
             transitionPanel.PopIn();
             yield return new WaitForSeconds(transitionPanel.Duration);
         }
-        
+
+        currentPartition = null;
         for (int i = 0; i < worldPartitions.Length; i++)
         {
             bool active = worldPartitions[i].Id == id;
             worldPartitions[i].gameObject.SetActive(active);
-            if (active && !visitedPartitions.Contains(id)) visitedPartitions.Add(id);
+            if (active)
+            {
+                currentPartition = worldPartitions[i];
+                if (!visitedPartitions.Contains(id)) visitedPartitions.Add(id);
+            }
         }
+
+        LastPartitionVisitedId = CurrentPartitionVisitedId;
+        CurrentPartitionVisitedId = id;
+
+        PartitionChanged?.Invoke();
 
         if (transitionPanel)
         {
