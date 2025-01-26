@@ -23,7 +23,7 @@ public class WorldManager : MonoBehaviour
 
     private void Start()
     {
-        LoadPartition(startPartition.Id);
+        //LoadPartition(startPartition.Id);
     }
 
     public void LoadPartition(string id)
