@@ -7010,6 +7010,17 @@ MonoBehaviour:
   animationState: Attack
   animationDuration: 0.8
   loadPartitionEvent: {fileID: 11400000, guid: 55bbd53bec74e3f41852329da24ba2ed, type: 2}
+  monsterSpawnPartitionsIds:
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 10
+  - 11
+  - 12
+  - 13
   warpPartitionsIds:
   - 3
   - 4

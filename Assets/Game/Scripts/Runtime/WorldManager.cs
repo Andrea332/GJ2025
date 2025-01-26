@@ -9,10 +9,6 @@ public class WorldManager : MonoBehaviour
     public WorldPartition startPartition;
     public Prsd_UtilityAnimations transitionPanel;
 
-    static WorldPartition currentPartition;
-
-    public static bool CanHaveMonster => currentPartition && currentPartition.CanHaveMonster;
-
     static readonly HashSet<string> visitedPartitions = new();
 
     public static event Action PartitionChanged;
@@ -44,14 +40,12 @@ public class WorldManager : MonoBehaviour
             yield return new WaitForSeconds(transitionPanel.Duration);
         }
 
-        currentPartition = null;
         for (int i = 0; i < worldPartitions.Length; i++)
         {
             bool active = worldPartitions[i].Id == id;
             worldPartitions[i].gameObject.SetActive(active);
             if (active)
             {
-                currentPartition = worldPartitions[i];
                 if (!visitedPartitions.Contains(id)) visitedPartitions.Add(id);
             }
         }

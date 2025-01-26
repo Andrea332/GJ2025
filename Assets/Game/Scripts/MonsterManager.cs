@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterManager : MonoBehaviour
@@ -6,10 +7,11 @@ public class MonsterManager : MonoBehaviour
     public int stepCounter = 6;
     [Space]
     public string startPartitionId = "1";
-    public string monsterActivePartitionId = "5";
+    public string monsterActivationPartitionId = "5";
     public string animationState = "Attack";
     public float animationDuration = 1f;
     public Game.DataEventString loadPartitionEvent;
+    public List<string> monsterSpawnPartitionsIds;
     public string[] warpPartitionsIds;
 
     public Animator monster;
@@ -43,8 +45,8 @@ public class MonsterManager : MonoBehaviour
 
     public static bool MonsterCheck(Interactable interactable)
     {
-        if (!WorldManager.HasVisitedPartition(instance.monsterActivePartitionId)) return true;
-        if (!WorldManager.CanHaveMonster) return true;
+        if (!WorldManager.HasVisitedPartition(instance.monsterActivationPartitionId)) return true;
+        if (!instance.monsterSpawnPartitionsIds.Contains(WorldManager.CurrentPartitionVisitedId)) return true;
         if (instance.Count < instance.stepCounter) return true;
 
         if (interactable is Teleporter t)
