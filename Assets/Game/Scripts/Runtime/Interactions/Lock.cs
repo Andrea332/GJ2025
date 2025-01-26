@@ -18,6 +18,7 @@ public class Lock : Interactable
     [SerializeField] Inventory inventory;
     [SerializeField] CoroutineAnimation unlockAnimation;
     [SerializeField] UnityEvent onUnlock;
+    [SerializeField] UnityEvent onUnlockFail;
 
     public ItemData RequiredItem => requiredItem;
 
@@ -56,6 +57,10 @@ public class Lock : Interactable
             if (unlockAnimation) unlockAnimation.Play(gameObject, OnUnlock);
             else OnUnlock();
         }
+        else
+        {
+            onUnlockFail.Invoke();
+        }
     }
 
     void OnUnlock()
@@ -63,5 +68,6 @@ public class Lock : Interactable
         unlockTriggered = true;
         LockUnlocked?.Invoke();
         onUnlock.Invoke();
+        gameObject.SetActive(false);
     }
 }

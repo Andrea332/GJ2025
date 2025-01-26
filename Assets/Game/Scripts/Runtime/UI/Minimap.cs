@@ -13,9 +13,14 @@ public class Minimap : MonoBehaviour
     public Transform dot;
     public MapSection[] sections;
 
-    private void Start()
+    private void OnEnable()
     {
         WorldManager.PartitionChanged += WorldManager_PartitionChanged;
+    }
+
+    private void OnDisable()
+    {
+        WorldManager.PartitionChanged -= WorldManager_PartitionChanged;
     }
 
     private void WorldManager_PartitionChanged()

@@ -15,7 +15,7 @@ MonoBehaviour:
   type: 1
   soundsElements:
   - {fileID: 8300000, guid: a897d1b4fadde284b9972eb7b5269068, type: 3}
-  volume: 1
+  volume: 0.7
   sfxSource: 0
   loop: 1
   description: 

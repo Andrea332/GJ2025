@@ -14,6 +14,8 @@ public class MonsterManager : MonoBehaviour
     public Game.DataEventString loadPartitionEvent;
     public List<string> monsterSpawnPartitionsIds;
     public string[] warpPartitionsIds;
+    public GameObject bubbleLight;
+    public GameObject bubbleHeavy;
 
     public Animator monster;
 
@@ -44,6 +46,9 @@ public class MonsterManager : MonoBehaviour
         monster.gameObject.SetActive(false);
         if (!WorldManager.HasVisitedPartition(instance.monsterActivationPartitionId)) return;
         Count++;
+
+        bubbleLight.SetActive(Count > 0 && Count < stepCounter * 0.5f);
+        bubbleLight.SetActive(Count >= stepCounter * 0.5f);
     }
 
     public static bool MonsterCheck(Interactable interactable)
@@ -77,6 +82,8 @@ public class MonsterManager : MonoBehaviour
             instance.Death();
         }
 
+        instance.bubbleLight.SetActive(false);
+        instance.bubbleLight.SetActive(false);
         instance.Count = 0;
         instance.TriggerAnimation();
         return false;
@@ -88,6 +95,9 @@ public class MonsterManager : MonoBehaviour
         instance.partitionIdAfterAnimation = instance.startPartitionId;
         Count = 0;
         CurrentPlayerHealth = playerHeath;
+
+        bubbleLight.SetActive(false);
+        bubbleLight.SetActive(false);
     }
 
     void TriggerAnimation()

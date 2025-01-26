@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Footsteps
   m_EditorClassIdentifier: 
   type: 0
-  soundsElements: []
+  soundsElements:
+  - {fileID: 8300000, guid: 68cacee3fc076164ab78cb613bfe6b1c, type: 3}
   volume: 1
   sfxSource: 0
   loop: 0
