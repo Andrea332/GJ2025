@@ -42,6 +42,7 @@ public class MonsterManager : MonoBehaviour
     void WorldManager_PartitionChanged()
     {
         monster.gameObject.SetActive(false);
+        if (!WorldManager.HasVisitedPartition(instance.monsterActivationPartitionId)) return;
         Count++;
     }
 

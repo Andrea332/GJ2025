@@ -54,6 +54,7 @@ MonoBehaviour:
       m_Calls: []
   targetPartitionId: 0
   loadPartitionEvent: {fileID: 11400000, guid: 55bbd53bec74e3f41852329da24ba2ed, type: 2}
+  moveAudio: {fileID: 11400000, guid: 2f785ff937ffeb84191d8790f3118b07, type: 2}
 --- !u!1971053207 &4403185364286808741
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
