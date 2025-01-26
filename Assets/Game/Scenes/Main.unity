@@ -7006,8 +7006,9 @@ MonoBehaviour:
   playerHeath: 3
   stepCounter: 4
   startPartitionId: 1
-  monsterActivePartitionId: 1
-  animationState: Attack
+  monsterActivationPartitionId: 5
+  attackAnimationState: Attack
+  deathAnimationState: Death
   animationDuration: 0.8
   loadPartitionEvent: {fileID: 11400000, guid: 55bbd53bec74e3f41852329da24ba2ed, type: 2}
   monsterSpawnPartitionsIds:

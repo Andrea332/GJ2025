@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,6 +8,8 @@ public class Lock : Interactable
 {
     [GUIColor(0.8f, 0.8f, 1.4f)]
     [SerializeField] ItemData requiredItem;
+    [GUIColor(0.8f, 0.8f, 1.4f)]
+    [SerializeField] string lockId;
     [SerializeField] int requiredItemAmount = 1;
     [SerializeField] bool removeItems;
     [SerializeField] bool automatic;
@@ -18,12 +21,18 @@ public class Lock : Interactable
 
     public ItemData RequiredItem => requiredItem;
 
-    public bool Unlocked { get; private set; }
+    public bool Unlocked => unlockedIds.Contains(lockId);
 
     public event Action LockUnlocked;
 
+    static readonly HashSet<string> unlockedIds = new();
+
+    bool unlockTriggered;
+
+
     void OnEnable()
     {
+        if (!unlockTriggered && Unlocked) OnUnlock();
         if (automatic && !Unlocked)
         {
             OnInteract(Vector2.zero);
@@ -39,7 +48,7 @@ public class Lock : Interactable
         }
         if (inventory && inventory.GetItemAmount(requiredItem) >= requiredItemAmount)
         {
-            Unlocked = true;
+            unlockedIds.Add(lockId);
             if (removeItems)
             {
                 for (int i = 0; i < requiredItemAmount; i++) inventory.RemoveItem(requiredItem);
@@ -51,6 +60,7 @@ public class Lock : Interactable
 
     void OnUnlock()
     {
+        unlockTriggered = true;
         LockUnlocked?.Invoke();
         onUnlock.Invoke();
     }

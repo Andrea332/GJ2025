@@ -8,7 +8,8 @@ public class MonsterManager : MonoBehaviour
     [Space]
     public string startPartitionId = "1";
     public string monsterActivationPartitionId = "5";
-    public string animationState = "Attack";
+    public string attackAnimationState = "Attack";
+    public string deathAnimationState = "Death";
     public float animationDuration = 1f;
     public Game.DataEventString loadPartitionEvent;
     public List<string> monsterSpawnPartitionsIds;
@@ -20,6 +21,7 @@ public class MonsterManager : MonoBehaviour
     public int Count { get; private set; }
 
     string partitionIdAfterAnimation;
+    string animationState;
 
     public bool MonsterActive => Count >= stepCounter;
 
@@ -61,6 +63,7 @@ public class MonsterManager : MonoBehaviour
                 if (--instance.CurrentPlayerHealth > 0)
                 {
                     instance.partitionIdAfterAnimation = instance.warpPartitionsIds[Random.Range(0, instance.warpPartitionsIds.Length)];
+                    instance.animationState = instance.attackAnimationState;
                 }
                 else
                 {
@@ -80,6 +83,7 @@ public class MonsterManager : MonoBehaviour
 
     void Death()
     {
+        instance.animationState = instance.deathAnimationState;
         instance.partitionIdAfterAnimation = instance.startPartitionId;
         Count = 0;
         CurrentPlayerHealth = playerHeath;

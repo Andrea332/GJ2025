@@ -704,6 +704,10 @@ PrefabInstance:
       value: Lock_13
       objectReference: {fileID: 0}
     - target: {fileID: 1488447465524219080, guid: 9ac0a71c17a9e884e9a5cc942e80da1f, type: 3}
+      propertyPath: lockId
+      value: 4-13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488447465524219080, guid: 9ac0a71c17a9e884e9a5cc942e80da1f, type: 3}
       propertyPath: removeItems
       value: 1
       objectReference: {fileID: 0}
