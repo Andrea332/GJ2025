@@ -5017,6 +5017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2873624164845811184}
   - component: {fileID: 4344619958169415943}
+  - component: {fileID: 2650429755488404716}
   m_Layer: 0
   m_Name: Room_15
   m_TagString: Untagged
@@ -5059,6 +5060,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 15
+--- !u!114 &2650429755488404716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251040325091097010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4794c9240da603d49b7470b4655add64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSet: {fileID: 11400000, guid: a8a6a3711f546a140aaa6df8bc149b10, type: 2}
+  playMode: 1
+  playOnEnable: 1
 --- !u!1 &6432585752015744344
 GameObject:
   m_ObjectHideFlags: 0
@@ -5794,7 +5810,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoreItem
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8329886357086639195, guid: 344cd86b2dd998a4db72e849bec4274b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6103482599570704476, guid: 344cd86b2dd998a4db72e849bec4274b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

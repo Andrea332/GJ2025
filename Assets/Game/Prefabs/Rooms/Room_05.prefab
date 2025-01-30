@@ -239,6 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2799520440955947617}
   - component: {fileID: 2136004821578753217}
+  - component: {fileID: -2514949024460284149}
   m_Layer: 0
   m_Name: Room_05
   m_TagString: Untagged
@@ -280,6 +281,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 5
+--- !u!114 &-2514949024460284149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262952636215823930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4794c9240da603d49b7470b4655add64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSet: {fileID: 11400000, guid: f1c309f8968b6f5448116287b3040fa9, type: 2}
+  playMode: 1
+  playOnEnable: 1
 --- !u!1001 &1904024342723878966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -293,8 +309,20 @@ PrefabInstance:
       value: Lock
       objectReference: {fileID: 0}
     - target: {fileID: 1488447465524219080, guid: 9ac0a71c17a9e884e9a5cc942e80da1f, type: 3}
+      propertyPath: lockId
+      value: altar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488447465524219080, guid: 9ac0a71c17a9e884e9a5cc942e80da1f, type: 3}
       propertyPath: automatic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488447465524219080, guid: 9ac0a71c17a9e884e9a5cc942e80da1f, type: 3}
+      propertyPath: lockedAudio
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488447465524219080, guid: 9ac0a71c17a9e884e9a5cc942e80da1f, type: 3}
+      propertyPath: unlockAudio
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1488447465524219080, guid: 9ac0a71c17a9e884e9a5cc942e80da1f, type: 3}
       propertyPath: requiredItemAmount

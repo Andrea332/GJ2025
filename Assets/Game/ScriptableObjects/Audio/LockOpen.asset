@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   soundsElements:
-  - {fileID: 8300000, guid: c955851d775f3d74293e1fb7c5f34a25, type: 3}
+  - {fileID: 8300000, guid: a5196d66a03ed0340a23b9e85c7970e7, type: 3}
   volume: 1
-  sfxSource: 0
+  playbackSlotIndex: 0
   loop: 0
   description: 

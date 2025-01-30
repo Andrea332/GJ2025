@@ -11,8 +11,7 @@ public class Prsd_AudioSet : ScriptableObject
     public Type type;
     public AudioClip[] soundsElements;
     public float volume = 1f;
-    [ShowIf(nameof(IsSfx))]
-    public int sfxSource = 0;
+    public int playbackSlotIndex = 0;
     [ShowIf(nameof(CanLoop))]
     public bool loop = false;
     [Space]

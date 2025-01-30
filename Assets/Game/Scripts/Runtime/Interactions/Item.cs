@@ -6,7 +6,6 @@ public class Item : Interactable
     [GUIColor(0.8f, 0.8f, 1.4f)]
     [SerializeField] ItemData itemData;
     [Space]
-    [SerializeField] Inventory inventory;
     [SerializeField] CoroutineAnimation pickAnimation;
     [SerializeField] SpriteRenderer spriteRenderer;
 
@@ -21,7 +20,7 @@ public class Item : Interactable
 
     void AddToInventory()
     {
-        inventory.AddItem(itemData);
+        GameData.Inventory.AddItem(itemData);
     }
 
     void OnValidate()

@@ -13,6 +13,6 @@ public class Teleporter : Interactable
     protected override void OnInteract(Vector2 worldInteractPosition)
     {
         loadPartitionEvent.Raise(targetPartitionId);
-        if (moveAudio) Prsd_AudioManager.PlaySoundFx(moveAudio);
+        if (moveAudio) Prsd_AudioManager.PlaySoundSet(moveAudio);
     }
 }

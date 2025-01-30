@@ -30,4 +30,9 @@ public class Inventory : ScriptableObject
             ItemAmountChanged?.Invoke(item, items[item.Id]);
         }
     }
+
+    public void ClearAll()
+    {
+        items.Clear();
+    }
 }

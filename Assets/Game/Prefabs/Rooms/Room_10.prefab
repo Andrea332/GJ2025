@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4287566136383412957}
   - component: {fileID: 5330942696634283661}
+  - component: {fileID: 5332564832306105560}
   m_Layer: 0
   m_Name: Room_10
   m_TagString: Untagged
@@ -138,6 +139,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 10
+--- !u!114 &5332564832306105560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784715456087394947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4794c9240da603d49b7470b4655add64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSet: {fileID: 11400000, guid: f1c309f8968b6f5448116287b3040fa9, type: 2}
+  playMode: 1
+  playOnEnable: 1
 --- !u!1 &4850608448110519179
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +1004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4403185364286808741, guid: c304d137b93b935478cd59892e132b4a, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4403185364286808741, guid: c304d137b93b935478cd59892e132b4a, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
@@ -1370,7 +1386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4403185364286808741, guid: c304d137b93b935478cd59892e132b4a, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4403185364286808741, guid: c304d137b93b935478cd59892e132b4a, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
@@ -1728,7 +1744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4403185364286808741, guid: c304d137b93b935478cd59892e132b4a, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4403185364286808741, guid: c304d137b93b935478cd59892e132b4a, type: 3}
       propertyPath: m_LocalAABB.m_Center.x

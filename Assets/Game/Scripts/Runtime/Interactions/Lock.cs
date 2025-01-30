@@ -1,8 +1,7 @@
-using Sirenix.OdinInspector;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Sirenix.OdinInspector;
 
 public class Lock : Interactable
 {
@@ -13,23 +12,20 @@ public class Lock : Interactable
     [SerializeField] int requiredItemAmount = 1;
     [SerializeField] bool removeItems;
     [SerializeField] bool automatic;
-    [SerializeField] string[] partitionsToVisit;
     [Space]
-    [SerializeField] Inventory inventory;
+    [SerializeField] Prsd_AudioSet unlockAudio;
+    [SerializeField] Prsd_AudioSet lockedAudio;
     [SerializeField] CoroutineAnimation unlockAnimation;
     [SerializeField] UnityEvent onUnlock;
     [SerializeField] UnityEvent onUnlockFail;
 
     public ItemData RequiredItem => requiredItem;
 
-    public bool Unlocked => unlockedIds.Contains(lockId);
+    public bool Unlocked => GameData.IsLockUnlocked(lockId);
 
     public event Action LockUnlocked;
 
-    static readonly HashSet<string> unlockedIds = new();
-
     bool unlockTriggered;
-
 
     void OnEnable()
     {
@@ -43,24 +39,28 @@ public class Lock : Interactable
     protected override void OnInteract(Vector2 worldInteractPosition)
     {
         if (Unlocked) return;
-        for (int i = 0; i < partitionsToVisit.Length; i++)
-        {
-            if (!WorldManager.HasVisitedPartition(partitionsToVisit[i])) return;
-        }
+        var inventory = GameData.Inventory;
         if (inventory && inventory.GetItemAmount(requiredItem) >= requiredItemAmount)
         {
-            unlockedIds.Add(lockId);
+            GameData.SaveUnlockedLock(lockId);
             if (removeItems)
             {
                 for (int i = 0; i < requiredItemAmount; i++) inventory.RemoveItem(requiredItem);
             }
-            if (unlockAnimation) unlockAnimation.Play(gameObject, OnUnlock);
-            else OnUnlock();
+            if (unlockAnimation) unlockAnimation.Play(gameObject, Unlock);
+            else Unlock();
         }
         else
         {
+            if (lockedAudio) Prsd_AudioManager.PlaySoundSet(lockedAudio);
             onUnlockFail.Invoke();
         }
+    }
+
+    void Unlock()
+    {
+        if (unlockAudio) Prsd_AudioManager.PlaySoundSet(unlockAudio);
+        OnUnlock();
     }
 
     void OnUnlock()

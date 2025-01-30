@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 3163895989718036838}
   - component: {fileID: 7366191849187298859}
   - component: {fileID: 3478419717283885797}
-  - component: {fileID: 6103482599570704476}
+  - component: {fileID: 2277648678009157355}
   m_Layer: 0
   m_Name: CoreItem
   m_TagString: Untagged
@@ -244,9 +244,9 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6103482599570704476}
-        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 2277648678009157355}
+        m_TargetAssemblyTypeName: Prsd_AudioSetPlayer, Assembly-CSharp
+        m_MethodName: PlayInstant
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 563190cc28ba7d849bd36f3b9a121f61, type: 2}
@@ -257,7 +257,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   itemData: {fileID: 0}
-  inventory: {fileID: 11400000, guid: dc7559a93024ee94ea99a7892543a6f1, type: 2}
   pickAnimation: {fileID: 11400000, guid: 21299bc57c9483946abf8875b411d75d, type: 2}
   spriteRenderer: {fileID: 8123677254724682878}
 --- !u!60 &3478419717283885797
@@ -352,7 +351,7 @@ PolygonCollider2D:
       - {x: 0.53, y: -1.09}
       - {x: 0.74, y: -0.98999995}
   m_UseDelaunayMesh: 0
---- !u!114 &6103482599570704476
+--- !u!114 &2277648678009157355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -361,9 +360,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8329886357086639195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eea578c11f768f47b1ea9177d998c4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4794c9240da603d49b7470b4655add64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSet: {fileID: 0}
+  playMode: 0
+  playOnEnable: 0
 --- !u!1 &9114249159258854345
 GameObject:
   m_ObjectHideFlags: 0

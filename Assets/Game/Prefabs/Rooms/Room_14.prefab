@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6273253528789109601}
   - component: {fileID: 2498616704671377386}
+  - component: {fileID: -2387509442517852784}
   m_Layer: 0
   m_Name: Room_14
   m_TagString: Untagged
@@ -52,6 +53,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 14
+--- !u!114 &-2387509442517852784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020249999116195703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4794c9240da603d49b7470b4655add64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSet: {fileID: 11400000, guid: f1c309f8968b6f5448116287b3040fa9, type: 2}
+  playMode: 1
+  playOnEnable: 1
 --- !u!1 &1025286775230290039
 GameObject:
   m_ObjectHideFlags: 0
@@ -14809,6 +14825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoreItem
       objectReference: {fileID: 0}
+    - target: {fileID: 8329886357086639195, guid: 344cd86b2dd998a4db72e849bec4274b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14870,6 +14890,10 @@ PrefabInstance:
     - target: {fileID: 1029992649925519998, guid: c304d137b93b935478cd59892e132b4a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
       value: 1.6573958
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403185364286808741, guid: c304d137b93b935478cd59892e132b4a, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4464025909361927462, guid: c304d137b93b935478cd59892e132b4a, type: 3}
       propertyPath: targetPartitionId
